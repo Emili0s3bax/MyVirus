@@ -1,4 +1,5 @@
 Project-Keylogger/
+
 ├── main.py          # Main file with the keylogger code
 ├── keylog.txt       # File where logs are recorded (empty at the beginning)
 ├── requirements.txt # List of Python dependencies
